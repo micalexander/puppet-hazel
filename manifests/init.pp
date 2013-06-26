@@ -4,8 +4,6 @@
 #
 #    include hazel
 class hazel {
-  include wget
-
   $pref_pane_dir = "/Users/${::luser}/Library/PreferencePanes"
   $pref_pane_name = "Hazel.prefPane"
   $install_dir = "/tmp"
@@ -13,7 +11,7 @@ class hazel {
 
   exec { 'hazel-download':
     cwd => $install_dir,
-    command => "wget https://s3.amazonaws.com/Noodlesoft/${dmg}",
+    command => "curl -OLs https://s3.amazonaws.com/Noodlesoft/${dmg}",
     creates => "${install_dir}/${dmg}"
   }
 

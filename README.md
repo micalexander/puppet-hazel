@@ -11,7 +11,6 @@ include hazel
 ## Required Puppet Modules
 
 * `boxen`
-* `wget`
 
 ## Development
 
