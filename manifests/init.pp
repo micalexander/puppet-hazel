@@ -25,7 +25,8 @@ class hazel {
   }
 
   exec { 'hazel-install':
-    command => "cp -R /Volumes/Hazel/${$pref_pane_name} ${pref_pane_dir}/",
+      #    command => "cp -R /Volumes/Hazel/${$pref_pane_name} ${pref_pane_dir}/",
+    command => "open /Volumes/Hazel/${$pref_pane_name}",
     creates => "${pref_pane_dir}/${pref_pane_name}",
     notify => Exec['hazel-unmount']
   }
