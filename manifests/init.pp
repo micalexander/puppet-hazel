@@ -7,7 +7,7 @@ class hazel {
   $pref_pane_dir = "/Users/${::luser}/Library/PreferencePanes"
   $pref_pane_name = "Hazel.prefPane"
   $install_dir = "/tmp"
-  $dmg = "Hazel-3.2.1.dmg"
+  $dmg = "Hazel-3.3.5.dmg"
 
   exec { 'hazel-download':
     cwd => $install_dir,
@@ -19,7 +19,7 @@ class hazel {
 
   exec { 'hazel-mount':
     cwd => $install_dir,
-    command => "yes | hdiutil mount Hazel-3.2.1.dmg > /dev/null",
+    command => "yes | hdiutil mount Hazel-3.3.5.dmg > /dev/null",
     subscribe => Exec['hazel-install'],
     refreshonly => true
   }
